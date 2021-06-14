@@ -1,7 +1,50 @@
-@use 'sass:map';
-@use '~@angular/material' as mat;
+@import '../../../../assets/theme.scss';
 
-@import url('../../../../assets/theme.scss');
+.fixed-navigation-nav{
+    position: fixed;
+    z-index: 2;
+    padding: 1rem;
+    background: $bgGrey;
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    min-width: calc(100vw - 405px);
+
+    .nav-button{
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    .nav-button-active{
+        color: $darkBlue
+    }
+}
+
+.main-content{
+    padding: 1rem;
+    background: $bgGrey;
+
+    .fixed-navigation-content{
+        margin-top: 70px;
+        width: calc(100% - 2rem);
+        z-index: 0;
+        min-height: 100vh;
+    }
+}
+
+.sidenav{
+    min-width: 355px;
+    background: $darkBlue;
+    .mat-list-item{
+        color: $white;  
+    }
+}
+
+.menu-toolbar{
+    height: 88px;
+}
 
 .menu-container {
     display: flex;
@@ -38,15 +81,4 @@ h1.menu-app-name {
     flex: 1 0 auto;
 }
 
-@mixin color($theme) {
-    // Get the color config from the theme.
-    $color-config: mat.get-color-config($theme);
-  
-    // Get the primary color palette from the color-config.
-    $primary-palette: map.get($color-config, 'primary');
 
-    .sidenav {
-      // Read the 500 hue from the primary color palette.
-      background: mat.get-color-from-palette($primary-palette, 900);
-    }
-}

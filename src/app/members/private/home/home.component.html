@@ -1,70 +1,15 @@
-<!-- <ng-container>
-    <mat-toolbar class="menu-header">Header</mat-toolbar>
-  
-    <mat-sidenav-container class="menu-container">
-      <mat-sidenav #sidenav 
-      mode="side" 
-      opened 
-      class="menu-sidenav"           
-      fixedInViewport="false" 
-      fixedTopGap="0"            
-      fixedBottomGap="0">
-        <p>
-            <button mat-button>
-            <mat-icon aria-hidden="false">home</mat-icon>
-                Home
-            </button>
-        </p>
-        <p>
-            <button mat-button>
-            <mat-icon aria-hidden="false">home</mat-icon>
-                Time Tracker Settings
-            </button>
-        </p>
-        <p>
-            <button mat-button>
-            <mat-icon aria-hidden="false">home</mat-icon>
-                Vacations/Leaves
-            </button>
-        </p>
-        <p>
-            <button mat-button>
-            <mat-icon aria-hidden="false">home</mat-icon>
-                Rewards and Recognition
-            </button>
-        </p>
-        <p>
-            <button mat-button>
-            <mat-icon aria-hidden="false">home</mat-icon>
-                Referral Program
-            </button>
-        </p>
-        <p>
-            <button mat-button>
-            <mat-icon aria-hidden="false">home</mat-icon>
-                Reimbursement
-            </button>
-        </p>
-      </mat-sidenav>
-  
-      <mat-sidenav-content>
-        <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-</ng-container> -->
-
 <div class="menu-container" [class.menu-is-mobile]="mobileQuery.matches">
     <mat-toolbar color="primary" class="menu-toolbar">
-      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="menu-app-name">Responsive App</h1>
+      <div *ngIf="mobileQuery.matches">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      </div>
+      <img src="../../../../assets/img/baires-logo.svg">
     </mat-toolbar>
   
-    <mat-sidenav-container 
-        class="menu-sidenav-container"                
-        >
+    <mat-sidenav-container class="menu-sidenav-container">
       <mat-sidenav #snav 
-        [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
-        opened
+        [style.marginTop.px]="mobileQuery.matches ? 88 : 0"
+        [opened]="!mobileQuery.matches ? true : false"
         [mode]="mobileQuery.matches ? 'over' : 'side'"           
         [fixedInViewport]="mobileQuery.matches" 
         fixedTopGap="0"
@@ -78,9 +23,30 @@
       </mat-sidenav>
   
       <mat-sidenav-content
-      [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
-      >
-        <h1>Conteúdo Principal</h1>
+      [style.marginTop.px]="mobileQuery.matches ? 88 : 0"
+      > 
+        <div class="fixed-navigation-nav">
+            <div class="start">
+                <button class="nav-button nav-button-active" mat-button> Time tracker</button>
+                <button class="nav-button" mat-button> Check Hours</button>
+            </div>
+            <div class="end">
+                <button color="accent" mat-flat-button> Track Hours</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="fixed-navigation-content">
+                <mat-card>
+                    Card 1
+                </mat-card>
+
+                <h2>Todays Hours</h2>
+                <mat-card>
+                    Card2
+                </mat-card>
+            </div>
+        </div>
+        
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
