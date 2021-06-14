@@ -7,6 +7,9 @@ import { HomeComponent } from './home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -14,7 +17,10 @@ import { MatSliderModule } from '@angular/material/slider';
     // Angular Material Modules
     MatSidenavModule,
     MatToolbarModule,
-    MatSliderModule
+    MatSliderModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule
   ],
   declarations: [HomeComponent]
 })
