@@ -12,6 +12,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { TimeTrackerComponent } from '../../timetracker/timetracker.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 @NgModule({
   imports: [
@@ -24,8 +31,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatSelectModule
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, TimeTrackerComponent]
 })
 export class HomePageModule {}

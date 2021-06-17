@@ -10,7 +10,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Angular Material Modules
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core/';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select'; 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -29,9 +34,16 @@ import { MatSliderModule } from '@angular/material/slider';
 
     //Angular Material Modules
     MatSidenavModule,
-    MatSliderModule
+    MatSliderModule,
+    MatDialogModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatInputModule,
   ],
   providers: [],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
