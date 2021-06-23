@@ -1,53 +1,21 @@
-<div class="menu-container" [class.menu-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="primary" class="menu-toolbar">
-      <div *ngIf="mobileQuery.matches">
-        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      </div>
-      <img src="../../../../assets/img/baires-logo.svg">
-    </mat-toolbar>
-  
-    <mat-sidenav-container class="menu-sidenav-container">
-      <mat-sidenav #snav 
-        [style.marginTop.px]="mobileQuery.matches ? 88 : 0"
-        [opened]="!mobileQuery.matches ? true : false"
-        [mode]="mobileQuery.matches ? 'over' : 'side'"           
-        [fixedInViewport]="mobileQuery.matches" 
-        fixedTopGap="0"
-        class="sidenav">
-        <mat-nav-list>
-            <a mat-list-item routerLink="." *ngFor="let nav of menuNav">
-            <mat-icon aria-hidden="false">{{nav.icon}}</mat-icon>
-            {{nav.title}}
-            </a>
-        </mat-nav-list>
-      </mat-sidenav>
-  
-      <mat-sidenav-content
-      [style.marginTop.px]="mobileQuery.matches ? 88 : 0"
-      > 
-        <div class="fixed-navigation-nav">
-            <div class="start">
-                <button class="nav-button nav-button-active" mat-button> Time tracker</button>
-                <button class="nav-button" mat-button> Check Hours</button>
-            </div>
-            <div class="end">
-                <button color="accent" mat-flat-button (click)="openDialog()"> Track Hours</button>
-            </div>
-        </div>
-        <div class="main-content">
-            <div class="fixed-navigation-content">
-                <mat-card>
-                    Card 1
-                </mat-card>
+<div class="fixed-navigation-nav">
+    <div class="start">
+        <button class="nav-button nav-button-active" mat-button> Time tracker</button>
+        <button class="nav-button" mat-button> Check Hours</button>
+    </div>
+    <div class="end">
+        <button color="accent" mat-flat-button (click)="openDialog()"> Track Hours</button>
+    </div>
+</div>
+<div class="main-content">
+    <div class="fixed-navigation-content">
+        <mat-card>
+            Card 1
+        </mat-card>
 
-                <h2>Todays Hours</h2>
-                <mat-card>
-                    Card2
-                </mat-card>
-            </div>
-        </div>
-        
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
-  
+        <h2>Todays Hours</h2>
+        <mat-card>
+            Card2
+        </mat-card>
+    </div>
+</div>

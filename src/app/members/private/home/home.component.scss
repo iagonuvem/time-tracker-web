@@ -1,10 +1,8 @@
-@import '../../../../assets/theme.scss';
-
 .fixed-navigation-nav{
     position: fixed;
     z-index: 2;
     padding: 1rem;
-    background: $bgGrey;
+    background: var(--bgGrey);
     display: flex;
     align-items: stretch;
     justify-content: start;
@@ -18,14 +16,14 @@
     }
 
     .nav-button-active{
-        color: $darkBlue
+        color: var(--darkBlue)
     }
 }
 
 .main-content{
     padding: 1rem;
-    background: $bgGrey;
-
+    background: var(--bgGrey);
+    
     .fixed-navigation-content{
         margin-top: 70px;
         width: calc(100% - 2rem);
@@ -33,52 +31,3 @@
         min-height: 100vh;
     }
 }
-
-.sidenav{
-    min-width: 355px;
-    background: $darkBlue;
-    .mat-list-item{
-        color: $white;  
-    }
-}
-
-.menu-toolbar{
-    height: 88px;
-}
-
-.menu-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  
-.menu-is-mobile .menu-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-}
-  
-h1.menu-app-name {
-    margin-left: 8px;
-}
-  
-.menu-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-    mat-sidenav-content{
-        min-height: calc(100vh - 64px);
-    }
-}
-  
-.menu-is-mobile .menu-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-}
-
-
