@@ -1,7 +1,7 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TimeTrackerComponent } from '../../timetracker/timetracker.component';
+import { TimeTrackerComponent } from '../../modals/timetracker/timetracker.component';
 
 @Component({
   selector: 'app-home',
