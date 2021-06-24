@@ -5,6 +5,7 @@ import { Project } from 'src/app/models/Project';
 import { TaskCategory } from 'src/app/models/TaskCategory';
 import { TaskDescription } from 'src/app/models/TaskDescription';
 import { TimeTrack } from 'src/app/models/TimeTrack';
+import { TimeTrackService } from 'src/app/services/time-track-service.service';
 import { TimeTrackViewModel } from './time-track-viewmodel';
 
 @Component({
@@ -26,7 +27,7 @@ export class TimeTrackerComponent implements OnInit {
     {id: 1, description: 'Paid poop time'},
     {id: 1, description: 'Inserting new bugs to ensure you\'ll always have a job'},
   ];
-  constructor(
+  constructor(public service: TimeTrackService,
     public dialogRef: MatDialogRef<TimeTrackerComponent>,
     @Inject(MAT_DIALOG_DATA) public model: TimeTrack) {}
 
