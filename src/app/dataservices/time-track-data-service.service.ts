@@ -22,13 +22,13 @@ export class TimeTrackDataService {
       return this.http.post(this.url, JSON.stringify(newTimeTrack),{headers:this.headers}) as Observable<Array<TimeTrack>>;
   }
 
-  deleteTimeTrack(deletedTimeTrack: TimeTrack) {
+  deleteTimeTrack(deletedTimeTrack: TimeTrack): Observable<TimeTrack>  {
       const params = {'id': `${deletedTimeTrack.id}`};
-      return this.http.delete(this.url, {params: params});
+      return this.http.delete<TimeTrack>(this.url, {params: params});
   }
 
 
-  toggleTimeTrack(toggled: TimeTrack) {
-    return this.http.put(this.url, JSON.stringify(toggled),{headers:this.headers});
+  toggleTimeTrack(toggled: TimeTrack): Observable<TimeTrack> {
+    return this.http.put<TimeTrack>(this.url, JSON.stringify(toggled),{headers:this.headers});
   }
 }
