@@ -1,15 +1,18 @@
-import {AssignmentType} from './AssignmentType'
-import {ClientFocalPoint} from './ClientFocalPoint'
-import {Project} from './Project'
+import { ClientFocalPoint } from './ClientFocalPoint'
+import { Project } from './Project'
+import { TaskCategory } from './TaskCategory'
+import { TaskDescription } from './TaskDescription'
+import { User } from './User'
 
 
-export interface TimeTracker {
+export interface TimeTrack {
 	id:Number;
-    user:string;
+    user:User;
     date: Date;
-    minutes:Number;
-    assignmentType: AssignmentType;
+    minutes:String;
+    taskCategory: TaskCategory;
+    taskDescription: TaskDescription;
     project: Project;
     clientFocalPoint:ClientFocalPoint;
-	description:String ;
+	comments:String ;
 }

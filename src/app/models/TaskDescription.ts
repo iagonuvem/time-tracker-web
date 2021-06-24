@@ -1,5 +1,6 @@
 
-export interface AssignmentType {
+
+export interface TaskDescription {
 	id:number;
     description:string;
 }
