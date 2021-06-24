@@ -1,22 +1,68 @@
 .fixed-navigation-nav{
     position: fixed;
     z-index: 2;
-    padding: 1rem;
+    padding: 1rem 2.18rem;
     background: var(--bgGrey);
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: start;
-    min-width: calc(100vw - 405px);
+    min-width: calc(100vw - 440px);
+    column-gap: calc(100% - 645px);
 
+    .start{
+        display: flex;
+        column-gap: 16px;
+    }
+    
+    .end{
+        width: 292px;
+    }
+
+    .btn-track-hours{
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
     .nav-button{
         font-size: 20px;
+        line-height: 24px;
         font-weight: 500;
         text-transform: uppercase;
-        color: #000;
+        color: rgba(0,0,0,0.6);
     }
 
     .nav-button-active{
         color: var(--darkBlue)
+    }
+    .nav-button-active::after{
+        content: " ";
+        height: 5px;
+        width: 100%;
+        background: var(--darkBlue);
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+    }
+
+    @media (max-width: 1085px) // Large Screen
+    {
+        .end{
+            width: auto !important;
+        }
+    }
+
+    @media (max-width: 600px) // Small Screen
+    {
+        .start{
+            display: block;
+        }
+        .nav-button-active{
+            margin-bottom: 8px;
+        }
+        .nav-button-active::after{
+            bottom: -8px;
+        }
     }
 }
 
@@ -26,8 +72,126 @@
     
     .fixed-navigation-content{
         margin-top: 70px;
+        margin-left: 1.18rem;
         width: calc(100% - 2rem);
         z-index: 0;
         min-height: 100vh;
+
+        h4{
+            font-size: 34px;
+            line-height: 36px;
+            font-weight: 400;
+            color: var(--darkBlue);
+            margin-bottom: 8px;
+        }
+
+        h6{
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.6);
+            margin: 0;
+        }
+
+        .card-title{
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: 400;
+            color: var(--darkBlue);
+        }
+
+        .flex-card{
+            display: flex;
+            justify-content: space-around;
+            flex: 1 100%;
+            // flex-wrap: wrap;
+        }
+
+        .flex-row{
+            display: flex;
+        }
+
+        .flex-left {
+            flex: 50%;
+        }
+        
+        .flex-right {
+            flex: 50%;
+            text-align: right;
+        }
+
+        .label-block{
+            margin-bottom: 8px;
+            label{
+                display: block;
+            }
+        }
+
+        .text-bold{
+            font-weight: 800 !important;    
+        }
+
+        .text-highlight{
+            color: var(--blue);
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+        }
+
+        .text-red{
+            color: var(--red) !important;
+        }
+
+        .text-default{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 14px;
+            color: rgba(0,0,0,0.6);
+        }
+
+        .project-info{
+            min-width: 292px;
+
+            .title-content{
+                margin-top: 24px;
+                margin-bottom: 8px;
+            }
+
+            .dot{
+                position: relative;
+                float: left;
+                width: 16px;
+                height: 16px;
+                border-radius: 100%;
+                margin-right: 8px;
+            }
+            .padding-left-row{
+                padding-left: 20px;
+
+                .item{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        
+
+        mat-card{
+            padding: 3.5rem 4.812rem;
+            margin-bottom: 40px;
+        }
+
+        // .chart-content{
+        //     max-width: 140px;
+        // }
+
+        @media (max-width: 600px) { // Small Screen
+            .flex-card{ display: block; }
+            mat-card{ padding: 3.5rem 1.812rem;}
+            .project-info{
+                min-width: 100px;
+                width: auto !important;
+            }
+        }
+        
     }
 }

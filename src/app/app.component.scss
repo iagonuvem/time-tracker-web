@@ -1,46 +1,16 @@
-// @import '../assets/theme.scss';
-
-.fixed-navigation-nav{
-    position: fixed;
-    z-index: 2;
-    padding: 1rem;
-    background: var(--bgGrey);
-    display: flex;
-    align-items: stretch;
-    justify-content: start;
-    min-width: calc(100vw - 405px);
-
-    .nav-button{
-        font-size: 20px;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: #000;
-    }
-
-    .nav-button-active{
-        color: var(--darkBlue)
-    }
-}
-
-.main-content{
-    padding: 1rem;
-    background: var(--bgGrey);
-
-    .fixed-navigation-content{
-        margin-top: 70px;
-        width: calc(100% - 2rem);
-        z-index: 0;
-        min-height: 100vh;
-    }
-}
-
 .sidenav{
     min-width: 355px;
     background: var(--darkBlue);
+
     .mat-list-item{
-        color: var(--white);  
+        color: var(--white);
+
+        .mat-list-item-content {
+            column-gap: 16px !important;
+        }
     }
 }
+
 
 .menu-toolbar{
     height: 88px;

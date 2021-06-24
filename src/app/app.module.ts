@@ -23,20 +23,29 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core/';
 import { MatInputModule } from '@angular/material/input';
 
+// Custom Modules
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
-  // exports: [
-  //   //Angular Material Modules
-  //   MatSidenavModule
-  // ],
+  exports: [
+    //Custom Modules
+    ChartsModule,
+
+    //Angular Material Modules
+    // MatSidenavModule
+  ],
   imports: [
     FlexLayoutModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
+    //Custom Modules
+    ChartsModule,
 
     //Angular Material Modules
     MatSidenavModule,
@@ -52,7 +61,7 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     MatSelectModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   

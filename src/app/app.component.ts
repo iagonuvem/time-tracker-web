@@ -1,11 +1,12 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component} from '@angular/core';
+import { ChangeDetectorRef, Component, ViewEncapsulation} from '@angular/core';
 import { CoreService } from './services/core.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   mobileQuery: MediaQueryList;
@@ -13,10 +14,10 @@ export class AppComponent {
   menuNav = [
     { title: 'Home', url: '.', icon: 'home'},
     { title: 'Time Tracker Settings', url: '.', icon: 'query_builder'},
-    { title: 'Vacations/Leaves', url: '.', icon: 'surfing'},
-    { title: 'Rewards and Recognition', url: '.', icon: 'emoji_events'},
-    { title: 'Referral Program', url: '.', icon: 'person_add'},
-    { title: 'Reimbursement', url: '.', icon: 'monetization_on'},
+    { title: 'Request approval', url: '.', icon: 'surfing'},
+    // { title: 'Rewards and Recognition', url: '.', icon: 'emoji_events'},
+    // { title: 'Referral Program', url: '.', icon: 'person_add'},
+    // { title: 'Reimbursement', url: '.', icon: 'monetization_on'},
   ];
 
   private _mobileQueryListener: () => void;
@@ -27,7 +28,7 @@ export class AppComponent {
     media: MediaMatcher, 
     private coreService: CoreService) {
       this.initializeApp();
-      this.mobileQuery = media.matchMedia('(max-width: 600px)');
+      this.mobileQuery = media.matchMedia('(max-width: 880px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
       this.mobileQuery.addListener(this._mobileQueryListener);
   }

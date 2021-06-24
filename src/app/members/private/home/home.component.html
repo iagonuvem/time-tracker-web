@@ -4,16 +4,69 @@
         <button class="nav-button" mat-button> Check Hours</button>
     </div>
     <div class="end">
-        <button color="accent" mat-flat-button (click)="openDialog()"> Track Hours</button>
+        <button class="btn-track-hours" color="accent" mat-flat-button (click)="openDialog()"> Track Hours</button>
     </div>
 </div>
 <div class="main-content">
     <div class="fixed-navigation-content">
-        <mat-card>
-            Card 1
+        <mat-card class="flex-card">
+            <div>
+                <h6>Today</h6>
+                <h4>06h30m</h4>
+
+                <div class="row label-block">
+                    <label class="text-default">Regular Worked Hours</label>
+                    <label class="text-highlight">160h00m</label>
+                </div>
+                
+                <div class="row label-block">
+                    <label class="text-default">Month hours left:</label>
+                    <label class="text-highlight">00h00m</label>
+                </div>
+                
+                <div class="row label-block">
+                    <label class="text-default text-red">Extra hours:</label>
+                    <label class="text-highlight text-red text-bold">1h00m</label>
+                </div>
+            </div>
+
+            <div class="chart-content">
+                <canvas baseChart 
+                    [colors]="doughnutChartColors"
+                    [legend]="false"
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    [chartType]="doughnutChartType">
+                </canvas>
+            </div>
+
+            <div class="project-info">
+                <div class="flex-row title-content">
+                    <h6 class="flex-left">Project X</h6>
+                    <h6 class="flex-rigth">05h30</h6>
+                </div>
+                <div class="padding-left-row">
+                    <div class="flex-row item">
+                        <div class="dot" style="background: #0272B1;"></div>
+                        <label class="flex-left text-default">Development</label>
+                        <label class="flex-rigth text-default">2h30</label>
+                    </div>
+                    <div class="flex-row item">
+                        <div class="dot" style="background: #0496FF;"></div>
+                        <label class="flex-left text-default">Design</label>
+                        <label class="flex-rigth text-default">2h30</label>
+                    </div>
+                    
+                    <div class="flex-row item">
+                        <div class="dot" style="background: #A3D3FF;"></div>
+                        <label class="flex-left text-default">QA</label>
+                        <label class="flex-rigth text-default">2h30</label>
+                    </div>
+                </div>
+            </div>
         </mat-card>
 
-        <h2>Todays Hours</h2>
+        <h2 class="card-title">Today's Hours</h2>
         <mat-card>
             Card2
         </mat-card>

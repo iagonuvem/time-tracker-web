@@ -18,11 +18,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 
-
+// Custom Modules
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
     CommonModule,
+
+    // Custom Modules
+    ChartsModule,
+
     // Angular Material Modules
     MatSidenavModule,
     MatToolbarModule,

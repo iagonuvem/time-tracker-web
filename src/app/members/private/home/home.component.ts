@@ -2,6 +2,8 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TimeTrackerComponent } from '../../modals/timetracker/timetracker.component';
+import { ChartType } from 'chart.js';
+import { MultiDataSet, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +25,20 @@ export class HomeComponent implements OnInit {
   private _mobileQueryListener: () => void;
   public menuCollapsed:any = true;
 
+  // Doughnut
+  public doughnutChartColors = [
+    {
+      backgroundColor: ['#0272B1', '#0496FF', '#A3D3FF'],
+    },
+  ];
+  public doughnutChartLabels: Label[] = ['Development', 'Design', 'QA'];
+  public doughnutChartData: MultiDataSet = [
+    [350, 450, 100],
+    // [50, 150, 120],
+    // [250, 130, 70],
+  ];
+  public doughnutChartType: ChartType = 'doughnut';
+  
   constructor(
     changeDetectorRef: ChangeDetectorRef, 
     media: MediaMatcher, 
