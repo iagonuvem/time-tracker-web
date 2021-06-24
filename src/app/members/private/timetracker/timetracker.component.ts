@@ -1,8 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatOption } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { AssignmentType } from 'src/app/models/AssignmentType';
-import { TimeTracker } from 'src/app/models/TimeTrack';
+import { Project } from 'src/app/models/Project';
+import { TaskCategory } from 'src/app/models/TaskCategory';
+import { TaskDescription } from 'src/app/models/TaskDescription';
+import { TimeTrack } from 'src/app/models/TimeTrack';
+import { TimeTrackViewModel } from './time-track-viewmodel';
 
 @Component({
   selector: 'time-tracker',
@@ -12,7 +15,11 @@ import { TimeTracker } from 'src/app/models/TimeTrack';
 })
 export class TimeTrackerComponent implements OnInit {
   //selected: Date | null;
-  assignmentTypes: AssignmentType[] = [
+  //selected: Date | null;
+  project!: string;
+  taskDescription!:string;
+  taskCategory!: string;
+  taskDescriptions: TaskDescription[] = [
     {id: 1, description: 'Pretending you care'},
     {id: 1, description: 'Procrastinating '},
     {id: 1, description: 'Using compiling time as an excuse to slack off'},
@@ -21,10 +28,11 @@ export class TimeTrackerComponent implements OnInit {
   ];
   constructor(
     public dialogRef: MatDialogRef<TimeTrackerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: TimeTracker) {}
+    @Inject(MAT_DIALOG_DATA) public model: TimeTrack) {}
 
   onNoClick(): void {
     this.dialogRef.close();
+    
   }
 
   ngOnInit(): void {
