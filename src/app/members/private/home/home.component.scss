@@ -127,6 +127,11 @@
             }
         }
 
+        .text-small{
+            font-size: 11px;
+            line-height: 12px;   
+        }
+
         .text-bold{
             font-weight: 800 !important;    
         }
@@ -136,6 +141,10 @@
             font-size: 16px;
             line-height: 24px;
             font-weight: 400;
+        }
+
+        .text-orange{
+            color: var(--orange) !important;
         }
 
         .text-red{
@@ -180,9 +189,17 @@
             margin-bottom: 40px;
         }
 
-        // .chart-content{
-        //     max-width: 140px;
-        // }
+        .chart-content{
+            margin-top: -20px;
+            max-width: 140px;
+            .fixed-graph-text-container{
+                position: relative;
+                top: 90px;
+                left: 30px;
+                width: 80px;
+                text-align: center;
+            }
+        }
 
         @media (max-width: 600px) { // Small Screen
             .flex-card{ display: block; }

@@ -31,7 +31,12 @@
             </div>
 
             <div class="chart-content">
+                <div class="fixed-graph-text-container">
+                    <label class="text-small text-orange">Hours Left:</label>
+                    <h6 class="text-orange">02h30m</h6>
+                </div>
                 <canvas baseChart 
+                    [options]="doughnutChartOptions"
                     [colors]="doughnutChartColors"
                     [legend]="false"
                     [data]="doughnutChartData"
