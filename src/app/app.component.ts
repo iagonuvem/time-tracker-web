@@ -12,9 +12,9 @@ export class AppComponent {
   mobileQuery: MediaQueryList;
   
   menuNav = [
-    { title: 'Home', url: '.', icon: 'home'},
-    { title: 'Time Tracker Settings', url: '.', icon: 'query_builder'},
-    { title: 'Request approval', url: '.', icon: 'surfing'},
+    { title: 'Home', url: '/members/home', icon: 'home'},
+    { title: 'Time Tracker Settings', url: '/members/settings', icon: 'query_builder'},
+    { title: 'Request approval', url: '/members/request-approval', icon: 'surfing'},
     // { title: 'Rewards and Recognition', url: '.', icon: 'emoji_events'},
     // { title: 'Referral Program', url: '.', icon: 'person_add'},
     // { title: 'Reimbursement', url: '.', icon: 'monetization_on'},

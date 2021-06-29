@@ -15,7 +15,7 @@
         fixedTopGap="0"
         class="sidenav">
         <mat-nav-list>
-            <a mat-list-item routerLink="." *ngFor="let nav of menuNav">
+            <a mat-list-item [routerLink]="nav.url" *ngFor="let nav of menuNav">
               <mat-icon aria-hidden="false">{{nav.icon}}</mat-icon>
               {{nav.title}}
             </a>

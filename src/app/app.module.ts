@@ -25,10 +25,14 @@ import { MatInputModule } from '@angular/material/input';
 
 // Custom Modules
 import { ChartsModule } from 'ng2-charts';
+import { SettingsComponent } from './members/private/settings/settings.component';
+import { RequestApprovalComponent } from './members/private/request-approval/request-approval.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SettingsComponent,
+    RequestApprovalComponent
   ],
   exports: [
     //Custom Modules
