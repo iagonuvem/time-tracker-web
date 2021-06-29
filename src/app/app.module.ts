@@ -22,6 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core/';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table'
 
 // Custom Modules
 import { ChartsModule } from 'ng2-charts';
@@ -66,6 +67,7 @@ import { RequestApprovalComponent } from './members/private/request-approval/req
     MatSelectModule,
     MatNativeDateModule,
     MatInputModule,
+    MatTableModule
   ],
   providers: [],
   

@@ -1,1 +1,28 @@
-<p>request-approval works!</p>
+<div class="main-content">
+    <mat-card>
+        <h2 class="card-title">Monthly Worked Hours Approval</h2>
+        <h5>Project X - Focal point: Name 1</h5>
+        <div class="flex-row hours-row">
+            <div>
+                <mat-list class="hours-list">
+                    <mat-list-item class="flex-row"> <!--FOR AQUI-->
+                        <label>Regular Worked Hours</label>
+                        <label>2h30</label>
+                        <div class="flex-right">
+                            <button mat-icon-button >
+                                <mat-icon aria-hidden="false">visibility</mat-icon>
+                            </button>
+                            <button mat-icon-button >
+                                <mat-icon aria-hidden="false">edit</mat-icon>
+                            </button>
+                        </div>
+                    </mat-list-item>
+                </mat-list>                  
+            </div>
+            <div class="side-buttons-container">
+                <button color="accent" mat-stroked-button >Change Focal Point</button>
+                <button color="accent" mat-flat-button >Send To Approval</button>
+            </div>
+        </div> 
+    </mat-card>
+</div>

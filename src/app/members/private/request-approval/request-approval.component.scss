@@ -1,0 +1,14 @@
+.hours-row{
+    flex-flow: wrap-reverse;
+}
+.hours-list{
+    min-width: 35vw;
+    width: auto;
+}
+.side-buttons-container{
+    width: 215px;
+    button{
+        display: block;
+        width: 100%;
+    }
+}

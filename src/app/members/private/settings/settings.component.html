@@ -1,1 +1,83 @@
-<p>settings works!</p>
+<div class="main-content">
+    <mat-card>
+        <h2 class="card-title">Time Tracker Settings</h2>
+        <div class="flex-row">
+            <div>
+                <h5>Working-days calendar</h5>
+                <mat-form-field appearance="fill">
+                    <mat-label>Select the country</mat-label>
+                    <mat-select>
+                        <mat-option value="br">
+                            Brazil
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <h5>Salary</h5>
+                <div class="flex-row">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Monthly Salary</mat-label>
+                        <input matInput type="number">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Currency</mat-label>
+                        <mat-select>
+                            <mat-option value="BRL">
+                                Reais
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h5>Projects</h5>
+            <div class="flex-row">
+                <mat-form-field appearance="fill">
+                    <mat-label>Project</mat-label>
+                    <mat-select>
+                        <mat-option value="x">
+                            Project X
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Focal Point</mat-label>
+                        <mat-select>
+                            <mat-option value="a">
+                                Focal Point
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div class="underline-content">
+                        <a mat-button>+ Add New Focal Point</a>
+                    </div>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Daily Hours</mat-label>
+                        <input matInput type="number">
+                    </mat-form-field>
+                    <div class="underline-content flex-row">
+                        <div class="flex-right">
+                            <button color="primary" mat-icon-button >
+                                <mat-icon aria-hidden="false">add_circle</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-row">
+            <div class="flex-left">
+                <button color="accent" mat-stroked-button >Cancel</button>
+            </div>
+            <div class="flex-right">
+                <button color="accent" mat-flat-button >Save</button>
+            </div>
+        </div>
+    </mat-card>
+</div>
