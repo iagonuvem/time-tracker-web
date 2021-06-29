@@ -11,6 +11,8 @@ import { MultiDataSet, Label } from 'ng2-charts';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+
+  activeTab: any = 0;
   mobileQuery: MediaQueryList;
   
   menuNav = [
@@ -75,5 +77,9 @@ export class HomeComponent implements OnInit {
       console.log('The dialog was closed');
       console.log(result);
     });
+  }
+
+  changeActiveTab(tab:any){
+    this.activeTab = tab;
   }
 }
