@@ -4,11 +4,13 @@
 .hours-list{
     min-width: 35vw;
     width: auto;
+    border-top: 1px solid var(--darkBlue);
 }
 .side-buttons-container{
     width: 215px;
     button{
         display: block;
         width: 100%;
+        margin-bottom: 8px;
     }
 }
