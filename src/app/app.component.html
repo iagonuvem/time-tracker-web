@@ -4,6 +4,21 @@
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
       </div>
       <img class="main-logo" src="../../../../assets/img/baires-logo.svg">
+      <div class="flex-right toolbar-options-container">
+        <button mat-icon-button >
+          <mat-icon aria-hidden="false">notifications</mat-icon>
+        </button>
+
+        <button mat-icon-button >
+          <mat-icon aria-hidden="false">account_circle</mat-icon>
+        </button>
+        <label class="name" *ngIf="!mobileQuery.matches">
+          Hi Natalha Carvalho
+        </label>
+        <button mat-icon-button >
+          <mat-icon aria-hidden="false">arrow_drop_down</mat-icon>
+        </button>
+      </div>
     </mat-toolbar>
   
     <mat-sidenav-container class="menu-sidenav-container">
