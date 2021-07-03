@@ -3,12 +3,14 @@
         <button class="nav-button nav-button-active" mat-button> Time tracker</button>
         <button class="nav-button" mat-button> Check Hours</button>
     </div>
-    <div class="end">
-        <button class="btn-track-hours" color="accent" mat-flat-button (click)="openDialog()"> Track Hours</button>
-    </div>
 </div>
 <div class="main-content">
+
     <div class="fixed-navigation-content">
+        <mat-card>
+            <time-tracker-component>    
+            </time-tracker-component>
+        </mat-card>
         <mat-card class="flex-card">
             <div>
                 <h6>Today</h6>
