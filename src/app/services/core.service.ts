@@ -29,7 +29,7 @@ export class CoreService {
     const value = `[${this._collection.map(e => JSON.stringify(e))}]`; 
     localStorage.setItem(key,value);
   }
-  private checkConfig = () => {if(!this._isConfigured){throw "Not configured. Call thisService.configure() on your ngOnIOnit"}};
+  private checkConfig = () => {if(!this._isConfigured){throw "Not configured. Call thisService.configure(someEntity) on your ngOnIOnit"}};
   private refreshCollections = () => {this.setLocalStorage();this._entityCollection.next(this._collection)};
   
   deleteEntity(entity: any) {
