@@ -67,17 +67,20 @@
 }
 
 
-    
 .fixed-navigation-content{
         margin-top: 70px;
         margin-left: 1.18rem;
         width: calc(100% - 2rem);
         z-index: 0;
         min-height: 100vh;
+        
+        .underline-content{
+            position: relative;
+            top: -1rem;
+            margin-bottom: -1rem;
+        }
 
         .project-info{
-            min-width: 292px;
-
             .title-content{
                 margin-top: 24px;
                 margin-bottom: 8px;
@@ -109,6 +112,9 @@
         .chart-content{
             margin-top: -20px;
             max-width: 140px;
+            padding: 0 2rem 2rem;
+            margin: 0 auto;
+
             .fixed-graph-text-container{
                 position: relative;
                 top: 90px;
@@ -116,6 +122,24 @@
                 width: 80px;
                 text-align: center;
             }
+        }
+
+        .btn-full{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .comment-textarea{
+            width: 35vw;
+            mat-form-field{
+                width: 100%;
+            }
+            mat-label{
+                span{
+                    font-size: 8px;
+                }
+            }
+            
         }
 
         @media (max-width: 600px) { // Small Screen
@@ -127,5 +151,10 @@
             }
         }
         
+        @media (min-width: 1100px){
+            .project-info{
+                min-width: 292px;
+            }
+        }
 }
 

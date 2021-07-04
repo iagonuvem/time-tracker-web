@@ -61,6 +61,14 @@
         text-align: right;
     }
 
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .flex-wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
     .label-block{
         margin-bottom: 8px;
         label{
@@ -97,5 +105,16 @@
         font-size: 14px;
         line-height: 14px;
         color: rgba(0,0,0,0.6);
+    }
+
+    .underline-content{
+        position: relative;
+        top: -1rem;
+        margin-bottom: -1rem;
+    }
+    
+    .underline-link{
+        cursor: pointer;
+        color: var(--blue);
     }
 }

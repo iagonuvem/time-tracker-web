@@ -3,50 +3,96 @@
         <button class="nav-button" [ngClass]="{'nav-button-active': activeTab == 0}" mat-button (click)="changeActiveTab(0)"> Time tracker</button>
         <button class="nav-button" [ngClass]="{'nav-button-active': activeTab == 1}" mat-button (click)="changeActiveTab(1)"> Check Hours</button>
     </div>
-    <div class="end">
+    <!-- <div class="end">
         <button class="btn-track-hours" color="accent" mat-flat-button (click)="openDialog()"> Track Hours</button>
-    </div>
+    </div> -->
 </div>
 <div class="main-content">
     <div class="fixed-navigation-content">
         <!--TAB CHECK HOURS-->
         <div *ngIf="activeTab == 0"> 
+            <mat-card>
+                <div class="flex-row flex-wrap">
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        <div class="underline-content">
+                            <a class="underline-link">Paste full day</a>
+                        </div>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Hours</mat-label>
+                            <input matInput type="text" />
+                        </mat-form-field>
+                        <div class="underline-content">
+                            <a class="underline-link" >Paste task</a>
+                        </div>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Project</mat-label>
+                            <mat-select>
+                                <mat-option value="br">
+                                    Project X
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="flex-row flex-wrap">
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Task Category</mat-label>
+                            <mat-select>
+                                <mat-option value="br">
+                                    Category X
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Task description</mat-label>
+                            <mat-select>
+                                <mat-option value="br">
+                                    Category X
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Focal Point</mat-label>
+                            <mat-select>
+                                <mat-option value="br">
+                                    Focal Point 1
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="comment-textarea">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Comments <span>Optional</span></mat-label>
+                            <textarea matInput 
+                            cdkAutosizeMinRows="6"
+                            cdkAutosizeMaxRows="6"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="flex-right"> 
+                        <button class="btn-full btn-track-hours" color="primary" mat-stroked-button (click)="openDialog()"> Upload CSV</button>
+                        <button class="btn-full btn-track-hours" color="accent" mat-flat-button (click)="openDialog()"> Track Hours</button>
+                    </div>
+                </div>
+            </mat-card>
+
             <mat-card class="flex-card">
-                <div>
-                    <h6>Today</h6>
-                    <h4>06h30m</h4>
-    
-                    <div class="row label-block">
-                        <label class="text-default">Regular Worked Hours</label>
-                        <label class="text-highlight">160h00m</label>
-                    </div>
-                    
-                    <div class="row label-block">
-                        <label class="text-default">Month hours left:</label>
-                        <label class="text-highlight">00h00m</label>
-                    </div>
-                    
-                    <div class="row label-block">
-                        <label class="text-default text-red">Extra hours:</label>
-                        <label class="text-highlight text-red text-bold">1h00m</label>
-                    </div>
-                </div>
-    
-                <div class="chart-content">
-                    <div class="fixed-graph-text-container">
-                        <label class="text-small text-orange">Hours Left:</label>
-                        <h6 class="text-orange">02h30m</h6>
-                    </div>
-                    <canvas baseChart 
-                        [options]="doughnutChartOptions"
-                        [colors]="doughnutChartColors"
-                        [legend]="false"
-                        [data]="doughnutChartData"
-                        [labels]="doughnutChartLabels"
-                        [chartType]="doughnutChartType">
-                    </canvas>
-                </div>
-    
                 <div class="project-info">
                     <div class="flex-row title-content">
                         <h6 class="flex-left">Project X</h6>
@@ -71,6 +117,43 @@
                         </div>
                     </div>
                 </div>
+    
+                <div class="chart-content">
+                    <div class="fixed-graph-text-container">
+                        <label class="text-small text-orange">Hours Left:</label>
+                        <h6 class="text-orange">02h30m</h6>
+                    </div>
+                    <canvas baseChart 
+                        [options]="doughnutChartOptions"
+                        [colors]="doughnutChartColors"
+                        [legend]="false"
+                        [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType">
+                    </canvas>
+                </div>
+                
+                <div>
+                    <h6>Today</h6>
+                    <h4>06h30m</h4>
+    
+                    <div class="row label-block">
+                        <label class="text-default">Regular Worked Hours</label>
+                        <label class="text-highlight">160h00m</label>
+                    </div>
+                    
+                    <div class="row label-block">
+                        <label class="text-default">Month hours left:</label>
+                        <label class="text-highlight">00h00m</label>
+                    </div>
+                    
+                    <div class="row label-block">
+                        <label class="text-default text-red">Extra hours:</label>
+                        <label class="text-highlight text-red text-bold">1h00m</label>
+                    </div>
+                </div>
+
+                
             </mat-card>
 
             <h2 class="card-title">Today's Hours</h2>

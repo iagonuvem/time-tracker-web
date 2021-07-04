@@ -12,14 +12,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { TimeTrackerComponent } from '../../modals/timetracker/timetracker.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core/';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table'
 
 // Custom Modules
 import { ChartsModule } from 'ng2-charts';
+import { TimeTrackerComponent } from '../../modals/timetracker/timetracker.component';
 
 @NgModule({
   imports: [
@@ -40,7 +43,10 @@ import { ChartsModule } from 'ng2-charts';
     MatDatepickerModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatTableModule
   ],
   declarations: [HomeComponent, TimeTrackerComponent]
 })
