@@ -5,10 +5,4 @@ import { CoreService } from './core.service';
 @Injectable({
   providedIn: 'root'
 })
-export class TaskCategoryService extends CoreService {
-
-  constructor() {
-    super();
-    this.configure(new TaskCategory());
-}
-}
+export class TaskCategoryService extends CoreService { }
