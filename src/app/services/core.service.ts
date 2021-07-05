@@ -14,10 +14,12 @@ export class CoreService {
 
   configure(entity: any){
     this._collectionName = entity.constructor.name;
-    this._collection = JSON.parse(localStorage.getItem(this._collectionName) || "[]");  
+    this.loadInitialData()
     this._entityCollection = new BehaviorSubject<Array<typeof entity>>(this._collection);
     this._isConfigured = true;
   }
+  
+  loadInitialData = () =>{this._collection = JSON.parse(localStorage.getItem(this._collectionName) || "[]");};
 
   get entities(): Observable<Array<any>>{
     this.checkConfig();
