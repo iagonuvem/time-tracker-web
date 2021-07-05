@@ -1,5 +1,5 @@
 
-export interface AssignmentType {
-	id:number;
-    description:string;
+export class AssignmentType {
+	id:number | undefined;;
+    description:string | undefined;;
 }

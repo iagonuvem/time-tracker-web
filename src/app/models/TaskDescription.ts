@@ -1,5 +1,5 @@
-export interface TaskDescription
+export class TaskDescription
 {
-    id:Number;
-    description:String;
+    id:Number | undefined;
+    description:String | undefined;
 }

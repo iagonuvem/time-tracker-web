@@ -1,5 +1,5 @@
-export interface TaskCategory
+export class TaskCategory
 {
-    id:Number;
-    description:String;
+    id:Number | undefined;
+    description:String | undefined;
 }
