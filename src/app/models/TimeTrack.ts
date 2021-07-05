@@ -1,4 +1,4 @@
-import { ClientFocalPoint } from './ClientFocalPoint'
+import { FocalPoint } from './FocalPoint';
 import { Project } from './Project'
 import { TaskCategory } from './TaskCategory'
 import { TaskDescription } from './TaskDescription'
@@ -13,6 +13,6 @@ export class TimeTrack {
     taskCategory: TaskCategory | undefined;
     taskDescription: TaskDescription | undefined;
     project: Project | undefined;
-    clientFocalPoint:ClientFocalPoint | undefined;
+    clientFocalPoint: FocalPoint | undefined;
 	comments:String  | undefined;
 }
