@@ -10,11 +10,12 @@ export class CoreService {
   _entity: any;
   _entityCollection!: BehaviorSubject<Array<any>>;
   _isConfigured = false;
-  constructor() {  }
+  constructor() { this.configure(); }
 
-  configure(entity: any){
-    this._collectionName = `${entity.constructor.name.toLowerCase()}s`;
-    this._entityCollection = new BehaviorSubject<Array<typeof entity>>([]);
+  configure(){
+    const className = this.constructor.name.toLowerCase().replace("service","");
+    this._collectionName = `${className}s`;
+    this._entityCollection = new BehaviorSubject<Array<any>>([]);
     this.loadInitialData()
     this._isConfigured = true;
   }
@@ -27,7 +28,7 @@ export class CoreService {
 
   get entities(): Observable<Array<any>>{
     this.checkConfig();
-    return this._entityCollection;
+    return this._entityCollection.asObservable();
   }
   private setLocalStorage(){
     this.checkConfig();
@@ -43,13 +44,6 @@ export class CoreService {
     const findEntity = (e: { id: any; }) => e.id == entity.id;
     this._collection.splice(this._collection.findIndex(findEntity), 1);
     this.refreshCollections();
-    //deletar da collection
-    //talvez deletar do localstorage, não sei
-    //ou talvez definir de novo essa chave no local storage
-    //chamar o .next() pra atualizar a coleção talvez? O que retornar?
-    
-    //escrever método pra salver no localstorage tbm (localStorage.setItem("q",`[${q.map(e => JSON.stringify(e))}]`);)
-    //fazer método pra converter o outro lado tbm: var t = JSON.parse(localStorage.getItem("q"));
   }
   
   addEntity(entity: any){
