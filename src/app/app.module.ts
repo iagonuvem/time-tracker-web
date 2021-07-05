@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 
 // Custom Modules
 import { ChartsModule } from 'ng2-charts';
+import { TimeTrackerModule } from './members/private/timetracker/timetracker.module';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ChartsModule } from 'ng2-charts';
     CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    TimeTrackerModule,
+    
     //Custom Modules
     ChartsModule,
 

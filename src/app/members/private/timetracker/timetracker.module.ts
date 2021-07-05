@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatOption } from '@angular/material/core';
 
 // Angular Material Modules
 import { MatButtonModule } from '@angular/material/button';
@@ -32,10 +33,11 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     TextFieldModule,
   ],
   providers: [
-    { provide: TimeTrackService, useClass: TimeTrackService}
+    { provide: TimeTrackService, useClass: TimeTrackService },
+    MatOption
   ],
-  //exports:[TimeTrackerComponent],
-  declarations: [TimeTrackerComponent],
+  exports: [ TimeTrackerComponent ],
+  declarations: [ TimeTrackerComponent ],
   
 })
 export class TimeTrackerModule { }

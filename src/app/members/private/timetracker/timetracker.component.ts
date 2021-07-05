@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatOption } from '@angular/material/core';
 import { TaskDescription } from 'src/app/models/TaskDescription';
 import { TimeTrack } from 'src/app/models/TimeTrack';
 import { TimeTrackService } from '../../../services/time-track.service';
@@ -10,7 +9,7 @@ import { TimeTrackService } from '../../../services/time-track.service';
   selector: 'time-tracker-component',
   templateUrl: './timetracker.component.html',
   styleUrls: ['./timetracker.component.scss'],
-  providers:[MatOption],
+  // providers: [ MatOption ],
 })
 export class TimeTrackerComponent implements OnInit {
   group :FormGroup;
