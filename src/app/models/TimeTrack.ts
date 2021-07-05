@@ -13,6 +13,6 @@ export class TimeTrack {
     taskCategory: TaskCategory | undefined;
     taskDescription: TaskDescription | undefined;
     project: Project | undefined;
-    clientFocalPoint: FocalPoint | undefined;
+    focalPoint: FocalPoint | undefined;
 	comments:String  | undefined;
 }

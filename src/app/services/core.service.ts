@@ -13,13 +13,17 @@ export class CoreService {
   constructor() {  }
 
   configure(entity: any){
-    this._collectionName = entity.constructor.name;
+    this._collectionName = `${entity.constructor.name.toLowerCase()}s`;
+    this._entityCollection = new BehaviorSubject<Array<typeof entity>>([]);
     this.loadInitialData()
-    this._entityCollection = new BehaviorSubject<Array<typeof entity>>(this._collection);
     this._isConfigured = true;
   }
   
-  loadInitialData = () =>{this._collection = JSON.parse(localStorage.getItem(this._collectionName) || "[]");};
+  loadInitialData = () =>{
+    const stringContent = localStorage.getItem(this._collectionName);
+    this._collection =  JSON.parse( stringContent || "[]");
+    this._entityCollection.next(this._collection)
+  };
 
   get entities(): Observable<Array<any>>{
     this.checkConfig();
@@ -27,11 +31,11 @@ export class CoreService {
   }
   private setLocalStorage(){
     this.checkConfig();
-    const key = `${this._collectionName}s`;
+    const key = this._collectionName;
     const value = `[${this._collection.map(e => JSON.stringify(e))}]`; 
     localStorage.setItem(key,value);
   }
-  private checkConfig = () => {if(!this._isConfigured){throw "Not configured. Call thisService.configure(someEntity) on your ngOnIOnit"}};
+  private checkConfig = () => {if(!this._isConfigured){throw "Not configured. Call thisService.configure(someEntity) on your ngOnInit"}};
   private refreshCollections = () => {this.setLocalStorage();this._entityCollection.next(this._collection)};
   
   deleteEntity(entity: any) {
