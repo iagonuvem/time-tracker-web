@@ -14,6 +14,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimeTrackService } from '../../../services/time-track.service';
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { ProjectService } from 'src/app/services/project-service.service';
+import { TaskCategoryService } from 'src/app/services/task-category-service.service';
+import { TaskDescriptionService } from 'src/app/services/task-description-service.service';
 
 
 
@@ -33,8 +36,11 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     TextFieldModule,
   ],
   providers: [
+    MatOption,
     { provide: TimeTrackService, useClass: TimeTrackService },
-    MatOption
+    { provide: ProjectService, useClass: ProjectService },
+    { provide: TaskCategoryService, useClass: TaskCategoryService },
+    { provide: TaskDescriptionService, useClass: TaskDescriptionService },
   ],
   exports: [ TimeTrackerComponent ],
   declarations: [ TimeTrackerComponent ],
