@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table'
 import { ChartsModule } from 'ng2-charts';
 import { SettingsComponent } from './members/private/settings/settings.component';
 import { RequestApprovalComponent } from './members/private/request-approval/request-approval.component';
+import { TimeTrackerModule } from './members/private/timetracker/timetracker.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { RequestApprovalComponent } from './members/private/request-approval/req
     CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    TimeTrackerModule,
+    
     //Custom Modules
     ChartsModule,
 

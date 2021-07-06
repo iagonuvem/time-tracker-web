@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home.component';
@@ -22,7 +22,7 @@ import { MatTableModule } from '@angular/material/table'
 
 // Custom Modules
 import { ChartsModule } from 'ng2-charts';
-import { TimeTrackerComponent } from '../../modals/timetracker/timetracker.component';
+import { TimeTrackerModule } from '../timetracker/timetracker.module';
 
 @NgModule({
   imports: [
@@ -30,7 +30,6 @@ import { TimeTrackerComponent } from '../../modals/timetracker/timetracker.compo
 
     // Custom Modules
     ChartsModule,
-
     // Angular Material Modules
     MatSidenavModule,
     MatToolbarModule,
@@ -46,8 +45,10 @@ import { TimeTrackerComponent } from '../../modals/timetracker/timetracker.compo
     MatSelectModule,
     MatNativeDateModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    TimeTrackerModule
   ],
-  declarations: [HomeComponent, TimeTrackerComponent]
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  declarations: [HomeComponent]
 })
 export class HomePageModule {}
