@@ -26,7 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 // Custom Modules
 import { ChartsModule } from 'ng2-charts';
 import { TimeTrackerModule } from './members/private/timetracker/timetracker.module';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent
@@ -45,7 +45,7 @@ import { TimeTrackerModule } from './members/private/timetracker/timetracker.mod
     AppRoutingModule,
     BrowserAnimationsModule,
     TimeTrackerModule,
-    
+
     //Custom Modules
     ChartsModule,
 
@@ -64,9 +64,13 @@ import { TimeTrackerModule } from './members/private/timetracker/timetracker.mod
     MatSelectModule,
     MatNativeDateModule,
     MatInputModule,
+    ToastrModule.forRoot({
+      timeOut: 2750,
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
