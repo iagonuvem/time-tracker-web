@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuRoutingModule } from './menu-routing.module';
+
+import { MenuComponent } from './menu.component';
 
 // Angular Material Modules
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -24,39 +22,11 @@ import { MatNativeDateModule } from '@angular/material/core/';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table'
 
-// Custom Modules
-import { ChartsModule } from 'ng2-charts';
-import { SettingsComponent } from './members/private/settings/settings.component';
-import { RequestApprovalComponent } from './members/private/request-approval/request-approval.component';
-import { TimeTrackerModule } from './members/private/timetracker/timetracker.module';
-import { LoginComponent } from './members/public/login/login.component';
-// import { MenuComponent } from './members/private/menu/menu.component';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    SettingsComponent,
-    RequestApprovalComponent,
-    LoginComponent,
-    // MenuComponent
-  ],
-  exports: [
-    //Custom Modules
-    ChartsModule,
-
-    //Angular Material Modules
-    // MatSidenavModule
-  ],
+  declarations: [MenuComponent],
   imports: [
-    FlexLayoutModule,
-    BrowserModule,
     CommonModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    TimeTrackerModule,
-    
-    //Custom Modules
-    ChartsModule,
+    MenuRoutingModule,
 
     //Angular Material Modules
     MatSidenavModule,
@@ -74,9 +44,6 @@ import { LoginComponent } from './members/public/login/login.component';
     MatNativeDateModule,
     MatInputModule,
     MatTableModule
-  ],
-  providers: [],
-  
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class MenuModule { }

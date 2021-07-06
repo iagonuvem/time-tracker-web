@@ -9,22 +9,26 @@ import { RequestApprovalComponent } from './private/request-approval/request-app
 const routes: Routes = [
   { 
     path: '',
-    redirectTo: 'home', 
+    redirectTo: 'menu', 
     pathMatch: 'full' 
   },
   {
-    path: 'home',
-    // loadChildren: () => import('./private/home/home.module').then(m => m.HomePageModule) 
-    component: HomeComponent
+    path: 'menu',
+    loadChildren: () => import('./private/menu/menu.module').then(m => m.MenuModule) 
   },
-  {
-    path: 'settings',
-    component: SettingsComponent
-  },
-  {
-    path: 'request-approval',
-    component: RequestApprovalComponent
-  },
+  // {
+  //   path: 'home',
+  //   // loadChildren: () => import('./private/home/home.module').then(m => m.HomePageModule) 
+  //   component: HomeComponent
+  // },
+  // {
+  //   path: 'settings',
+  //   component: SettingsComponent
+  // },
+  // {
+  //   path: 'request-approval',
+  //   component: RequestApprovalComponent
+  // },
 
 ];
 @NgModule({
