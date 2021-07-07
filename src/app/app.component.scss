@@ -9,6 +9,10 @@
                 padding-left: 70px !important;
             }
         }
+
+        .calendar-content{
+            padding-left: 70px !important;
+        }
     }
 
     .toolbar-options-container{
@@ -19,7 +23,34 @@
 
 .sidenav{
     min-width: 355px;
-    background: var(--darkBlue);
+    background: var(--white);
+
+    .calendar-content{
+        padding: 40px 0 70px 70px !important;
+        // padding-left: 70px !important;
+
+        h2{
+            color: var(--darkBlue);
+        }
+
+        .calendar{
+            max-width: 250px;
+            margin-bottom: 1rem;
+        }
+
+        .item{
+            font-size: 1rem;
+            padding: 0rem 0.5rem 0 0;
+            color: var(--darkBlue);
+            display: block !important;
+        }
+
+        hr{
+            margin-right: 2.2rem;
+            background: var(--darkBlue);
+            height: 1px;
+        }
+    }
 
     .mat-list-item{
         color: var(--white);

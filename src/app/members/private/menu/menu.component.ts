@@ -1,5 +1,6 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -12,9 +13,9 @@ export class MenuComponent implements OnInit {
   mobileQuery: MediaQueryList;
   
   menuNav = [
-    { title: 'Home', url: '/members/home', icon: 'home'},
-    { title: 'Time Tracker Settings', url: '/members/settings', icon: 'query_builder'},
-    { title: 'Request approval', url: '/members/request-approval', icon: 'surfing'},
+    { title: 'Home', url: '/members/menu/master/home', icon: 'home'},
+    { title: 'Time Tracker Settings', url: '/members/menu/master/settings', icon: 'query_builder'},
+    { title: 'Request approval', url: '/members/menu/master/request-approval', icon: 'surfing'},
     // { title: 'Rewards and Recognition', url: '.', icon: 'emoji_events'},
     // { title: 'Referral Program', url: '.', icon: 'person_add'},
     // { title: 'Reimbursement', url: '.', icon: 'monetization_on'},
@@ -22,10 +23,13 @@ export class MenuComponent implements OnInit {
 
   private _mobileQueryListener: () => void;
   public menuCollapsed:any = true;
+  public router: any;
 
   constructor(
     changeDetectorRef: ChangeDetectorRef, 
-    media: MediaMatcher) {
+    media: MediaMatcher,
+    router: Router) {
+      this.router = router;
       this.initializeApp();
       this.mobileQuery = media.matchMedia('(max-width: 880px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -35,6 +39,7 @@ export class MenuComponent implements OnInit {
   initializeApp(){
     // Coisas para fazer ao iniciar a aplicacão
   }
+
 
   ngOnInit(): void {
     

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { MenuComponent } from './menu.component'
 import { HomeComponent } from '../home/home.component'
+import { SettingsComponent } from '../settings/settings.component';
+import { RequestApprovalComponent } from '../request-approval/request-approval.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,14 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
+      {
+        path: 'request-approval',
+        component: RequestApprovalComponent
       },
     ]
   },

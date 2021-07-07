@@ -19,6 +19,37 @@
             </mat-card>
 
             <mat-card class="flex-card">
+                
+                <div>
+                    <h6>Today</h6>
+                    <h4>06h30m</h4>
+
+                    <div class="row label-block">
+                        <label class="text-default">Regular Worked Hours</label>
+                        <label class="text-highlight">160h00m</label>
+                    </div>
+
+                    <div class="row label-block">
+                        <label class="text-default">Month hours left:</label>
+                        <label class="text-highlight">00h00m</label>
+                    </div>
+
+                    <div class="row label-block">
+                        <label class="text-default text-red">Extra hours:</label>
+                        <label class="text-highlight text-red text-bold">1h00m</label>
+                    </div>
+                </div>
+
+                <div class="chart-content">
+                    <div class="fixed-graph-text-container">
+                        <label class="text-small text-orange">Hours Left:</label>
+                        <h6 class="text-orange">02h30m</h6>
+                    </div>
+                    <canvas baseChart [options]="doughnutChartOptions" [colors]="doughnutChartColors" [legend]="false"
+                        [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+                    </canvas>
+                </div>
+
                 <div class="project-info">
                     <div class="flex-row title-content">
                         <h6 class="flex-left">Project X</h6>
@@ -43,41 +74,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="chart-content">
-                    <div class="fixed-graph-text-container">
-                        <label class="text-small text-orange">Hours Left:</label>
-                        <h6 class="text-orange">02h30m</h6>
-                    </div>
-                    <canvas baseChart [options]="doughnutChartOptions" [colors]="doughnutChartColors" [legend]="false"
-                        [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
-                    </canvas>
-                </div>
-
-                <div>
-                    <h6>Today</h6>
-                    <h4>06h30m</h4>
-
-                    <div class="row label-block">
-                        <label class="text-default">Regular Worked Hours</label>
-                        <label class="text-highlight">160h00m</label>
-                    </div>
-
-                    <div class="row label-block">
-                        <label class="text-default">Month hours left:</label>
-                        <label class="text-highlight">00h00m</label>
-                    </div>
-
-                    <div class="row label-block">
-                        <label class="text-default text-red">Extra hours:</label>
-                        <label class="text-highlight text-red text-bold">1h00m</label>
-                    </div>
-                </div>
             </mat-card>
 
             <h2 class="card-title">Today's Hours</h2>
             <mat-card>
-                Card2
+                
             </mat-card>
         </div>
 
@@ -85,7 +86,7 @@
         <div *ngIf="activeTab == 1">
             <h2 class="card-title">Check Hours</h2>
             <mat-card>
-                Card
+
             </mat-card>
         </div>
 

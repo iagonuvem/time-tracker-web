@@ -1,0 +1,10 @@
+.nav-top{
+    display: flex !important;
+    a{
+        width: auto !important;
+        color: var(--white) !important;
+    }
+    .active{
+        border-bottom: 0.5rem var(--white) solid;
+    }
+}
