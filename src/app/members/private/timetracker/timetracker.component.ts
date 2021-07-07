@@ -32,7 +32,7 @@ export class TimeTrackerComponent implements OnInit {
   // ];
   constructor(private toastrService: ToastrService, public timeTrackservice: TimeTrackService, public projectService: ProjectService,
     public taskCategoryService: TaskCategoryService, public taskDescriptionService: TaskDescriptionService, public fb: FormBuilder) {
-    this.createFakeData();
+    
     
     this._model = new TimeTrack();
     this.group = fb.group({
@@ -45,6 +45,7 @@ export class TimeTrackerComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.createFakeData();
     this._focalPoints.next(JSON.parse(localStorage.focalpoints));
   }
   trackHours() {
