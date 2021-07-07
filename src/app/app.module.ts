@@ -56,7 +56,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     TimeTrackerModule,
-    
+
     //Custom Modules
     ChartsModule,
 
@@ -83,7 +83,7 @@ import { FormsModule } from '@angular/forms';
     }),
   ],
   providers: [],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

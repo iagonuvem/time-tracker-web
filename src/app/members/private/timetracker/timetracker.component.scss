@@ -1,28 +1,18 @@
-// .mat-select-panel mat-option.mat-option {
-//     height: unset;
-//   }
-  
-//   .mat-option-text.mat-option-text {
-//     white-space: normal;
-//   }
-
-//   .example-container .mat-form-field + .mat-form-field {
-//     margin-left: 8px;
-//   }
-  
-//   .example-container .mat-form-field {
-//     width: 220px;
-//   }
-  
-//   .example-container form {
-//     margin-bottom: 20px;
-//   }
-
-  .row {
+.row {
     display: flex;
-    justify-content: space-between;
+    
   }
+.mat-form-field--inline {
+  margin: 1%;
+  width: 30%;
+}
 
-.dropdown {
+.mat-form-field--inline .mat-form-field {
+  display: inline-block;
   width: 100%;
-}  
+  vertical-align: middle;
+}
+
+.mat-form-field--inline .mat-form-field:nth-child(1) {
+  margin-right: 10px;
+}

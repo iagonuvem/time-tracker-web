@@ -1,4 +1,7 @@
-export interface Project {
-	id:Number;
-    description: String;
+import { FocalPoint } from "./FocalPoint";
+
+export class Project {
+	id:Number | undefined;
+    description: String | undefined;
+    focalPoints: Array<FocalPoint> = [];
 }
