@@ -8,3 +8,9 @@
         border-bottom: 0.5rem var(--white) solid;
     }
 }
+
+@media (min-width: 880px) { // NOT FOR Small Screen
+    .nav-top{
+        margin-left: 5.75rem;
+    }
+}
