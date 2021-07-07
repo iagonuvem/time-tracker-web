@@ -1,11 +1,18 @@
-.img-div 
-{
+.img-div {
     background-image: url(/assets/img/caminito-buenos-aires.png); 
-    background-repeat: no-repeat; 
-    width: 960px; 
-    height: 1080px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60vw;
+    height: 100vh;
+    display: block;
 }
 .row {
     display: flex;
     justify-content: space-between;
   }
+
+#photo{
+    img{
+        height: 100vh;
+    }
+}
