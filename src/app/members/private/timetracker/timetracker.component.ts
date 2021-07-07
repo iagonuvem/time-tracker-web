@@ -1,6 +1,7 @@
 import { TranslationWidth } from '@angular/common';
 import { ANALYZE_FOR_ENTRY_COMPONENTS, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FocalPoint } from 'src/app/models/FocalPoint';
@@ -24,6 +25,9 @@ export class TimeTrackerComponent implements OnInit {
   group: FormGroup;
   _model: TimeTrack;
   _focalPoints = new BehaviorSubject<Array<FocalPoint>>([]);
+  _projects = new BehaviorSubject<Array<any>>([]);
+  _taskDescriptions = new BehaviorSubject<Array<any>>([]);
+  _taskCategories = new BehaviorSubject<Array<any>>([]);
   // taskDescriptions: TaskDescription[] = [
   //   { id: 1, description: 'Procrastinating ' },
   //   { id: 2, description: 'Using compiling time as an excuse to slack off' },
@@ -32,7 +36,7 @@ export class TimeTrackerComponent implements OnInit {
   // ];
   constructor(private toastrService: ToastrService, public timeTrackservice: TimeTrackService, public projectService: ProjectService,
     public taskCategoryService: TaskCategoryService, public taskDescriptionService: TaskDescriptionService, public fb: FormBuilder) {
-    this.createFakeData();
+       
     
     this._model = new TimeTrack();
     this.group = fb.group({
@@ -45,7 +49,11 @@ export class TimeTrackerComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.createFakeData();
     this._focalPoints.next(JSON.parse(localStorage.focalpoints));
+    this._taskCategories.next(JSON.parse(localStorage.taskcategorys));
+    this._taskDescriptions.next(JSON.parse(localStorage.taskdescriptions));
+    this._projects.next(JSON.parse(localStorage.projects));
   }
   trackHours() {
     const isValid = this.validate();
