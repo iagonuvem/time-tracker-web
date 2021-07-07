@@ -30,6 +30,8 @@ import { SettingsComponent } from './members/private/settings/settings.component
 import { RequestApprovalComponent } from './members/private/request-approval/request-approval.component';
 import { TimeTrackerModule } from './members/private/timetracker/timetracker.module';
 import { LoginComponent } from './members/public/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
 // import { MenuComponent } from './members/private/menu/menu.component';
 
 @NgModule({
@@ -73,7 +75,12 @@ import { LoginComponent } from './members/public/login/login.component';
     MatSelectModule,
     MatNativeDateModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 2750,
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   
