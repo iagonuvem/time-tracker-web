@@ -36,7 +36,6 @@ export class TimeTrackerComponent implements OnInit {
   // ];
   constructor(private toastrService: ToastrService, public timeTrackservice: TimeTrackService, public projectService: ProjectService,
     public taskCategoryService: TaskCategoryService, public taskDescriptionService: TaskDescriptionService, public fb: FormBuilder) {
-       
     
     this._model = new TimeTrack();
     this.group = fb.group({
