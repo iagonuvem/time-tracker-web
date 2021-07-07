@@ -1,6 +1,7 @@
-export interface User
+export class User
 {
-    id:Number;
-    name:String;
-    email:String;
+    id:Number | undefined;
+    name:String| undefined;
+    email:String| undefined;
+    password:string| undefined;
 }
