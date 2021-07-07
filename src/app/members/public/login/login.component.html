@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div id="content" class="row">
+    <div id="photo">
+        <img src="../../assets/img/caminito-buenos-aires.png" width="960px" alt="">
+    </div>
+    <div id="form" style="margin: 10%;">
+        <div>
+            <img src="../../assets/img/tt-login-img.png" alt="">
+        </div>
+        <form action="">
+            <div>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Username</mat-label>
+                    <input [(ngModel)]="_model.email" matInput type="text" name="email">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Password</mat-label>
+                    <input  [(ngModel)]="_model.password"  matInput type="password" name="password">
+                </mat-form-field>
+            </div>
+            <div style="margin-right: 30%;"><a href="#">Forgot your password?</a></div>
+            <div><button mat-flat-button color="accent" style="width: 100%;" (click)="login()">LOGIN</button></div>
+            <br/>
+            <br/>
+            <br/>
+            <span>If you have any problem, raise a Support Request in <a href="#">Service Desk</a>.</span>
+        </form>
+
+    </div>
+</div>
